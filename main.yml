@@ -1,0 +1,18 @@
+name: 'Build Number Generator'
+description: 'Generate sequential build numbers for workflow runs'
+author: 'Einar Egilsson'
+runs:
+  using: 'node12'
+  main: 'main.js'
+inputs:
+  token:
+    description: 'GitHub Token to create and delete refs (GITHUB_TOKEN)'
+    required: false # Not required when getting the stored build number for later jobs, only in the first jobs when it's generated
+    
+outputs:
+  build_number:
+    description: 'Generated build number'
+  
+branding:
+  icon: 'hash'  
+  color: 'green'
